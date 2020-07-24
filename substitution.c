@@ -17,9 +17,6 @@
 // # After outputting ciphertext, you should print a newline. 
 // # Your program should then exit by returning 0 from main.
 
-// When running this file via command line, type:
-//         gcc substitution.c -o substitution -lcs50
-
 // My code to solve this challenge:
 #include <cs50.h>
 #include <stdio.h>
@@ -70,7 +67,7 @@ int main(int argc, char *argv[])
     {
         // Let's grab the current character in user's input and current character in the key:
         char currentCharInInput = userInput[i];
-        char currentCharInKey = keyStr[i];
+        // char currentCharInKey = keyStr[i];
 
         // If the current character in user's input is a capital:
         if (currentCharInInput >= 65 && currentCharInInput <= 90)
@@ -105,8 +102,6 @@ int main(int argc, char *argv[])
 
 int validateKey(string keyStr, int keyLength)
 {
-    char validCharacters[30];
-
      // Step 1: check that the key is in fact 26 characters & if not: end the function:
     if (keyLength != 26)
     {
@@ -178,3 +173,4 @@ int charIndexInAlphabet(char currentCharInInput)
     }
     return charAlphaIndex;
 }
+

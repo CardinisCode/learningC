@@ -26,9 +26,6 @@
 // Note: When you receive the user's key, it will initially be a string
 //  -> you'll have to validate it and then convert it to digits before you can use it. 
 
-// When running this file via command line, type:
-//         gcc caesar.c -o caesar -lcs50
-
 
 #include <stdio.h>
 #include <cs50.h>

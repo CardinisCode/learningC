@@ -15,10 +15,6 @@
 //      # If the index number is less than 1, 
 //          your program should output "Before Grade 1".
 
-// *** Note: **** 
-//      When running this file via command line, type:
-//         gcc readability.c -o readability -lcs50
-
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -124,3 +120,4 @@ float calculate_sentences(string quote_line, int quote_length)
     float sentences = (float) punctuation_count;
     return sentences;
 }
+
