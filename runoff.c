@@ -135,6 +135,7 @@ int main(int argc, string argv[])
 void outputPreferences(void) 
 {
     printf("\n");
+    // Print the current state of the preferences array:
     printf("Preferences\n");
     printf("         ");
     for (int i = 0; i < candidate_count; i++)
@@ -153,6 +154,7 @@ void outputPreferences(void)
     }
 
     printf("\n");
+    // Prints a candidates array:
     printf("Candidates:\n");
     printf("index | name | vote | eliminated\n");
     for (int i = 0; i < candidate_count; i++) 
