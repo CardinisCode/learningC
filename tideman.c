@@ -123,9 +123,14 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
-    for (int rank = 0; rank < candidate_count; rank++)
+    for (int preferred = 0; preferred < candidate_count - 1; preferred++)
     {
-        printf("Current rank: %i\n", ranks[rank]);
+        int prefererred_candidate = ranks[preferred];
+        for (int over = preferred + 1; over < candidate_count; over++)
+        {
+            int over_candidate = ranks[over];
+            preferences[prefererred_candidate][over_candidate] += 1;
+        }
     }
     return;
 }
