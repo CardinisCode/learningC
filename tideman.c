@@ -90,8 +90,8 @@ int main(int argc, string argv[])
         printf("\n");
     }
 
-    // add_pairs();
-    // sort_pairs();
+    add_pairs();
+    sort_pairs();
     // lock_pairs();
     // print_winner();
     return 0;
@@ -132,22 +132,76 @@ void record_preferences(int ranks[])
             preferences[prefererred_candidate][over_candidate] += 1;
         }
     }
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            printf("%i ", preferences[i][j]);
+        }
+        printf("\n");
+    }
     return;
 }
 
-// // Record pairs of candidates where one is preferred over the other
-// void add_pairs(void)
-// {
-//     // TODO
-//     return;
-// }
+// Record pairs of candidates where one is preferred over the other
+void add_pairs(void)
+{
+    // TODO
+    for (int candidate_i = 0 ; candidate_i < candidate_count; candidate_i++)
+    {
+        for (int candidate_j = 0; candidate_j < candidate_count; candidate_j++)
+        {
+            if (preferences[candidate_i][candidate_j] > preferences[candidate_j][candidate_i])
+            {
+                pairs[pair_count].winner = candidate_i;
+                pairs[pair_count].loser = candidate_j;
+                pair_count += 1;
+            }
+        }
+    }
+    return;
+}
 
-// // Sort pairs in decreasing order by strength of victory
-// void sort_pairs(void)
-// {
-//     // TODO
-//     return;
-// }
+// Sort pairs in decreasing order by strength of victory
+void sort_pairs(void)
+{
+    for (int current = 0; current < pair_count - 1; current++)
+    {
+        int current_winner = preferences[pairs[current].winner][pairs[current].loser];
+        int current_loser = preferences[pairs[current].loser][pairs[current].winner];
+        int current_strength_of_victory = current_winner - current_loser; 
+
+        int winning_index = current; 
+
+        for (int comparison = current + 1; comparison < pair_count; comparison++)
+        {
+            int comparison_winner = preferences[pairs[comparison].winner][pairs[comparison].loser];
+            int comparison_loser = preferences[pairs[comparison].loser][pairs[comparison].winner];
+            int comparison_strength_of_victory = comparison_winner - comparison_loser;
+
+            if (comparison_strength_of_victory > current_strength_of_victory)
+            {
+                winning_index = comparison; 
+            }
+        }
+
+        pair temp = pairs[current];
+        pairs[current] = pairs[winning_index]; 
+        pairs[winning_index] = temp;
+    }
+
+    // for (int pair = 0; pair < candidate_count; pair++)
+    // {
+    //     int winner_votes = preferences[pairs[pair].winner][pairs[pair].loser];
+    //     int loser_votes = preferences[pairs[pair].loser][pairs[pair].winner];
+    //     int difference = winner_votes - loser_votes;
+
+    //     printf("At Index %i: Winner %i with %i votes & Loser: %i with %i votes\n & a difference: %i\n", pair, pairs[pair].winner, winner_votes, pairs[pair].loser, loser_votes, difference);
+    //     // printf("At index %i: winner: %i loser: %i %i\n", pair, pairs[pair].winner, pairs[pair].loser);
+    // }
+    return;
+}
 
 // // Lock pairs into the candidate graph in order, without creating cycles
 // void lock_pairs(void)
