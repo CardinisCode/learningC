@@ -23,7 +23,7 @@ Below you'll find:          Line:
 -   Our challenge           111
 
 
-***Background:
+** Challenge background:
 
 Put more formally, the Tideman voting method consists of three parts:
 
@@ -47,7 +47,7 @@ Put more formally, the Tideman voting method consists of three parts:
 
 Once the graph is complete, the source of the graph (the one with no edges pointing towards it) is the winner!
 
-Code Breakdown:
+** Code Breakdown:
 
 #1: There are 2x two-dimensional arrays 
     *1: preferences. 
