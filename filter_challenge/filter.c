@@ -12,6 +12,9 @@ int main(int argc, char *argv[])
 
     // Get filter flag and check validity
     char filter = getopt(argc, argv, filters);
+    // getopt is a C library function used to break up options in command lines
+    // for easy parsing by shell procedures, and to check for legal options
+
     if (filter == '?')
     {
         fprintf(stderr, "Invalid filter.\n");
@@ -26,9 +29,10 @@ int main(int argc, char *argv[])
     }
 
     // Ensure proper usage
-    if (argc != optind + 2)
+    if (argc != optind + 2) // The variable optind is the index of the next element to be processed in argv.
     {
         fprintf(stderr, "Usage: filter [flag] infile outfile\n");
+        // EG: ./filter -g images/yard.bmp out.bmp
         return 3;
     }
 
@@ -100,12 +104,14 @@ int main(int argc, char *argv[])
     // Filter image
     switch (filter)
     {
+        printf("height: %i, width: %i\n", height, width);
         // Blur
         case 'b':
             blur(height, width, image);
             break;
 
         // Grayscale
+        printf("Let's start on the greyscale function.\n");
         case 'g':
             grayscale(height, width, image);
             break;

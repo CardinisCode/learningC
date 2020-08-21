@@ -27,8 +27,8 @@ Contents:
                                     Line
 -   Challenge Specification         32
 -   Understanding                   57
--   Hints                           152
--   Filter Functions                157
+-   Hints                           156
+-   Filter Functions                161
 
 ** Challenge Specification: 
 -   Implement the functions in helpers.c 
@@ -160,10 +160,10 @@ If you do it now,
 
 ** Filter Functions
                         Line:
--   Greyscale           165
--   Sepia               190
--   Reflections         213
--   Blur                221
+-   Greyscale           169
+-   Sepia               194
+-   Reflections         217
+-   Blur                225
 
 
 *   Greyscale
