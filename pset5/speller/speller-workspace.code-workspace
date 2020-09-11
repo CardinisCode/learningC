@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../Exercism"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"tuple": "c",
+			"type_traits": "c",
+			"utility": "c",
+			"ios": "c"
+		},
+		"python.pythonPath": "/usr/bin/python3"
+	}
+}
